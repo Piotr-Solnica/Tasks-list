@@ -1,14 +1,5 @@
 {
-    const tasks = [
-        {
-            content: "umyć samochód",
-            done: true,
-        },
-        {
-            content: "iść na trening",
-            done: false,
-        },
-    ];
+    const tasks = [];
 
     const addNewTask = (newTaskContent) => {
 
@@ -71,13 +62,17 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        const newTaskElement = document.querySelector(".js-newTask")
+        const newTaskContent = newTaskElement.value.trim();
 
-        if (newTaskContent === "") {
-            return;
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value = "";
         };
 
-        addNewTask(newTaskContent);
+        newTaskElement.focus();
+
+        
     };
 
     const init = () => {
