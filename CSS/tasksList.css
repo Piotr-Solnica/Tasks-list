@@ -1,0 +1,53 @@
+.tasksList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tasksList__item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    grid-gap: 10px;
+    border-bottom: solid 1px #e5e2e2;
+    padding: 10px;
+}
+
+.tasksList__button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: white;
+}
+
+.tasksList__button--done {
+    background-color: hsl(120, 100%, 25%);
+}
+
+.tasksList__button--done:hover {
+    background-color: hsl(120, 100%, 28%);
+}
+
+.tasksList__button--done:active {
+    background-color: hsl(120, 100%, 35%);
+}
+
+.tasksList__button--remove {
+    background-color: hsl(0, 100%, 50%);
+}
+
+.tasksList__button--remove:hover {
+    background-color: hsl(0, 100%, 60%);
+}
+
+.tasksList__button--remove:active {
+    background-color: hsl(0, 100%, 70%);
+}
+
+.tasksList__content {
+    font-size: 15px;
+}
+
+.tasksList__content--done {
+    text-decoration: line-through;
+}
