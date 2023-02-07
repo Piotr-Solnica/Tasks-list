@@ -10,7 +10,7 @@ This repository includes simple tasks list created by me.
 
 ## Description
 
-This simple aplication allows you add and delete tasks to the list and shows which one are already done.
+This simple aplication allows you to add and delete tasks to the list and shows which one are already done.
 
 ## Used technologies
 - HTML
