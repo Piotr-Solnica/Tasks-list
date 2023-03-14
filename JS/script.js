@@ -1,10 +1,11 @@
 {
     let tasks = [];
-
+    let hideTasksDone = false;
+    
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
-            { content: newTaskContent, },
+            { content: newTaskContent },
         ];
         render();
     };
@@ -20,9 +21,26 @@
     const toggleTaskDone = (taskIndex) => {
         tasks = [
             ...tasks.slice(0,taskIndex),
-            { ...tasks[taskIndex], done: !tasks[taskIndex].done },
+            { 
+                ...tasks[taskIndex], 
+                done: !tasks[taskIndex].done,
+            },
             ...tasks.slice(taskIndex + 1),
         ];
+        render();
+    }
+
+    const allTasksDone = () => {
+        tasks = tasks.map((tasks) => ({
+            ...tasks,
+            done: true,
+        }));
+
+        render();
+    }
+
+    const toggleHideTasksDone = () => {
+        hideTasksDone = !hideTasksDone;
         render();
     }
 
