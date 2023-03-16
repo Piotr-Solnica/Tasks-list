@@ -87,7 +87,7 @@
     const renderButtons = () => {
         const buttonsElement = document.querySelector(".js-buttons");
 
-        if(tasks.length <= 0) {
+        if(!tasks.length) {
             buttonsElement.innerHTML = "";
             return;
         }
@@ -96,14 +96,28 @@
         <button class = "buttons__button js-toggleHideTasksDone">
             ${hideTasksDone ? "Pokaż" : "Ukryj"} ukończone
         </button>
-        <button class = "buttons__button js-allTasksDone">
-            ${tasks.every(({done}) => done) ? "disabled" : ""} Ukończ wszystkie
+        <button
+         class = "buttons__button js-allTasksDone"
+            ${tasks.every(({done}) => done) ? "disabled" : ""} 
+        >
+            Ukończ wszystkie
         </button>
         `;
-
      };
 
-    const bindButtonsEvents = () => {};
+    const bindButtonsEvents = () => {
+        const allTasksDoneButton = document.querySelector(".js-allTasksDone");
+
+        if(allTasksDoneButton) {
+            allTasksDoneButton.addEventListener("click", allTasksDone);
+        }
+
+        const toggleHideTasksDoneButton = document.querySelector(".js-toggleHideTasksDone");
+        
+        if(toggleHideTasksDoneButton) {
+            toggleHideTasksDoneButton.addEventListener("click", toggleHideTasksDone);
+        }
+    };
 
     const render = () => {
 
