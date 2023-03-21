@@ -30,7 +30,7 @@
         render();
     }
 
-    const allTasksDone = () => {
+    const markAllTasksDOne = () => {
         tasks = tasks.map((tasks) => ({
             ...tasks,
             done: true,
@@ -97,7 +97,7 @@
             ${hideTasksDone ? "Pokaż" : "Ukryj"} ukończone
         </button>
         <button
-         class = "buttons__button js-allTasksDone"
+         class = "buttons__button js-markAllTasksDOne"
             ${tasks.every(({done}) => done) ? "disabled" : ""} 
         >
             Ukończ wszystkie
@@ -106,10 +106,10 @@
      };
 
     const bindButtonsEvents = () => {
-        const allTasksDoneButton = document.querySelector(".js-allTasksDone");
+        const markAllTasksDOneButton = document.querySelector(".js-markAllTasksDOne");
 
-        if(allTasksDoneButton) {
-            allTasksDoneButton.addEventListener("click", allTasksDone);
+        if(markAllTasksDOneButton) {
+            markAllTasksDOneButton.addEventListener("click", markAllTasksDOne);
         }
 
         const toggleHideTasksDoneButton = document.querySelector(".js-toggleHideTasksDone");
